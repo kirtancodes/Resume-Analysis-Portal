@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Recruiter Upload</h2>
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="jd" class="form-label">Upload Job Description</label>
+        <input class="form-control" type="file" name="jd" id="jd">
+    </div>
+    <div class="mb-3">
+        <label for="video" class="form-label">Upload Interview Video</label>
+        <input class="form-control" type="file" name="video" id="video">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

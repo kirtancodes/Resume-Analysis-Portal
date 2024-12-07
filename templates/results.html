@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Results</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in video_res %}
+            <tr>
+                <td>{{ result['File_Path'] }}</td>
+                <td>{{ result['summary'] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Resume Analysis Results</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Resume Name</th>
+            <th>Best Matching JD</th>
+            <th>Similarity Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+            <tr>
+                <td>{{ result['resume_file'] }}</td>
+                <td>{{ result['best_jd_name'] }}</td>
+                <td>{{ result['similarity_score']*100 }}%</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
